@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 18:43:05 by jidrizi           #+#    #+#             */
-/*   Updated: 2025/04/10 18:43:11 by jidrizi          ###   ########.fr       */
+/*   Updated: 2025/04/11 22:22:01 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,4 +15,14 @@
 void Zombie::announce(void)
 {
 	std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+}
+
+Zombie::Zombie(void)
+{
+	std::cout << "Zombie created!" << std::endl;
+}
+
+Zombie::~Zombie(void)
+{
+	std::cout << this->name << " destroyed!" << std::endl;
 }
