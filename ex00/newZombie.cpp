@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 18:48:07 by jidrizi           #+#    #+#             */
-/*   Updated: 2025/04/11 20:55:41 by jidrizi          ###   ########.fr       */
+/*   Updated: 2025/04/13 01:01:28 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,5 @@
 
 Zombie* Zombie::newZombie(std::string name)
 {
-	Zombie *zombie = new Zombie();
-	this->name = name;
-	return (zombie);
+	return (new Zombie(name));
 }
