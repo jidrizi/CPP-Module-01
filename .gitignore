@@ -1,6 +1,9 @@
 # Non git template stuff
-Zombie
 .vscode
+bin
+Zombie
+ZombieHorde
+
 
 # Prerequisites
 *.d
