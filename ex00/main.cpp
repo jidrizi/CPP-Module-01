@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 18:21:13 by jidrizi           #+#    #+#             */
-/*   Updated: 2025/04/17 00:20:35 by jidrizi          ###   ########.fr       */
+/*   Updated: 2025/04/17 00:22:22 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 int main(void)
 {
-	Zombie	*JustForFunction = new Zombie("JustForFunction");
+	Zombie	JustForFunction = Zombie("JustForFunction");
 
-	JustForFunction->randomChump("Chumpy");
-	delete JustForFunction;
+	JustForFunction.randomChump("Chumpy");
 	return (0);
 }
