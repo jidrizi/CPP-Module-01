@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 18:39:05 by jidrizi           #+#    #+#             */
-/*   Updated: 2025/04/13 01:05:01 by jidrizi          ###   ########.fr       */
+/*   Updated: 2025/04/17 00:01:48 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ class Zombie
 		std::string name;
 
 	public:
-					Zombie(void);
+					Zombie(std::string name);
 					~Zombie(void);
 		void		announce(void);
 		Zombie*		newZombie(std::string name);
-		void		randomChump( std::string name );
+		void		randomChump(std::string name);
 };
 
 #endif

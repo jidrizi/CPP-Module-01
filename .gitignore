@@ -1,5 +1,6 @@
 # Non git template stuff
 Zombie
+.vscode
 
 # Prerequisites
 *.d
