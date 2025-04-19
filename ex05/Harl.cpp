@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 12:35:08 by jidrizi           #+#    #+#             */
-/*   Updated: 2025/04/19 14:18:34 by jidrizi          ###   ########.fr       */
+/*   Updated: 2025/04/19 14:26:33 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ void	Harl::info(void)
 	std::cout << "I cannot believe adding extra bacon costs more money.You didn’t put enough bacon in my burger! If you did, I wouldn’t be asking for more!" << std::endl;
 }
 
-void	Harl::warning(void) {
+void	Harl::warning(void)
+{
 	std::cout << "[ WARNING ]" << std::endl;
 	std::cout << "I think I deserve to have some extra bacon for free. I’ve been coming for years, whereas you started working here just last month." << std::endl;
 }
@@ -49,5 +50,5 @@ void	Harl::complain(std::string level)
 			return ;
 		}
 	}
-	std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+	std::cerr << "Error: Complaint is invalid" << std::endl;
 }
