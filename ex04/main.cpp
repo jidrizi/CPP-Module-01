@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 07:30:33 by jidrizi           #+#    #+#             */
-/*   Updated: 2025/04/19 10:44:25 by jidrizi          ###   ########.fr       */
+/*   Updated: 2025/04/19 12:31:00 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,17 @@ static int	process(std::string filename, std::string s1, std::string s2)
 		return (EXIT_FAILURE);
 	}
 
-	std::string	replaced_content;
-	std::string current_line;
+	std::string		replaced_content;
+	std::string		current_line;
+	std::getline(infile, current_line);
+	replaced_content += replaceAll(current_line, s1, s2);
 	while (std::getline(infile, current_line))
 	{
-		replaced_content += replaceAll(current_line, s1, s2);
 		replaced_content += "\n";
+		replaced_content += replaceAll(current_line, s1, s2);
 	}
-
+	if (current_line.empty())
+		replaced_content += "\n";
 	std::ofstream	outfile(filename + ".replace");
 	if (!outfile)
 	{
