@@ -1,5 +1,6 @@
 # Non git template stuff
 .vscode
+settings.json
 bin
 Zombie
 ZombieHorde

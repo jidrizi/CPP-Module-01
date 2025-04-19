@@ -6,16 +6,15 @@
 /*   By: jidrizi <jidrizi@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 02:09:47 by jidrizi           #+#    #+#             */
-/*   Updated: 2025/04/18 09:56:06 by jidrizi          ###   ########.fr       */
+/*   Updated: 2025/04/19 07:06:28 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string name)
+HumanB::HumanB(std::string name) : _name(name)
 {
-	this->_name = name;
-	this->_weapon = Weapon("No Weapon");
+	this->_weapon.setType("none");
 	std::cout << "(B made)" << std::endl;
 }
 
@@ -24,15 +23,10 @@ HumanB::~HumanB(void)
 	std::cout << "[B destroyed]" << std::endl;
 }
 
-// this is different from the attack in HumanA because HumanB can sometimes
-// not have a weapon
 void	HumanB::attack(void)
 {
-	if (this->_weapon.getType() == "No Weapon")
-	{
-		std::cout << this->_name << " cannot attack because they have no weapon"
-			<< std::endl;
-	}
+	if (this->_weapon.getType() == "none")
+		std::cout << this->_name << " has no weapon" << std::endl;
 	else
 	{
 		std::cout << this->_name << " attacks with their "
@@ -40,7 +34,7 @@ void	HumanB::attack(void)
 	}
 }
 
-void	HumanB::setWeapon(Weapon weapon)
+void	HumanB::setWeapon(Weapon &weapon)
 {
 	this->_weapon = weapon;
 	std::cout << this->_name << " has a new weapon: "
