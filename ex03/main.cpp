@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 02:10:01 by jidrizi           #+#    #+#             */
-/*   Updated: 2025/04/18 10:21:21 by jidrizi          ###   ########.fr       */
+/*   Updated: 2025/04/19 07:25:52 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "HumanB.hpp"
 
 //main is provided by the subject pdf
-int main()
+int	main()
 {
 	{
 		Weapon club = Weapon("crude spiked club");

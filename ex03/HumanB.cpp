@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 02:09:47 by jidrizi           #+#    #+#             */
-/*   Updated: 2025/04/19 07:20:00 by jidrizi          ###   ########.fr       */
+/*   Updated: 2025/04/19 07:23:20 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ HumanB::~HumanB(void)
 
 void	HumanB::attack(void)
 {
-	if (this->_weapon->getType() == "none")
+	if (this->_weapon == NULL)
 		std::cout << this->_name << " has no weapon" << std::endl;
 	else
 	{
