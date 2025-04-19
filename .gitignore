@@ -7,7 +7,7 @@ ZombieHorde
 Brain
 Violence
 Sed
-
+*.replace
 # Prerequisites
 *.d
 
