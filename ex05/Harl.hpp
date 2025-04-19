@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 12:35:05 by jidrizi           #+#    #+#             */
-/*   Updated: 2025/04/19 12:40:44 by jidrizi          ###   ########.fr       */
+/*   Updated: 2025/04/19 14:01:57 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 # define HARL_HPP
 
 #include <iostream>
+
+
+
+
 
 class Harl
 {
