@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 02:09:47 by jidrizi           #+#    #+#             */
-/*   Updated: 2025/04/19 07:23:20 by jidrizi          ###   ########.fr       */
+/*   Updated: 2025/04/19 10:53:16 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,4 @@ void	HumanB::attack(void)
 void	HumanB::setWeapon(Weapon &weapon)
 {
 	this->_weapon = &weapon;
-
 }

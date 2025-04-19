@@ -6,11 +6,31 @@
 /*   By: jidrizi <jidrizi@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 07:30:33 by jidrizi           #+#    #+#             */
-/*   Updated: 2025/04/19 08:28:04 by jidrizi          ###   ########.fr       */
+/*   Updated: 2025/04/19 10:44:25 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sed.hpp"
+
+static std::string	replaceAll(const std::string	&line, const std::string &s1,
+	const std::string &s2)
+{
+	std::string result;
+	std::size_t pos = 0;
+	std::size_t found;
+
+	if (s1.empty())
+		return (line);
+
+	while ((found = line.find(s1, pos)) != std::string::npos)
+	{
+		result.append(line.substr(pos, found - pos));
+		result.append(s2);
+		pos = found + s1.length();
+	}
+	result.append(line.substr(pos));
+	return (result);
+}
 
 static int	process(std::string filename, std::string s1, std::string s2)
 {
@@ -20,21 +40,13 @@ static int	process(std::string filename, std::string s1, std::string s2)
 		std::cerr << "Could not open input file.\n";
 		return (EXIT_FAILURE);
 	}
-	
-	int				s1_len = s1.length();
-	int				s2_len = s2_len;
-	size_t			pos = 0;
-	std::string		line;
-	while (true)
+
+	std::string	replaced_content;
+	std::string current_line;
+	while (std::getline(infile, current_line))
 	{
-		if (!std::getline(infile, line))
-			break;
-		while ((pos = line.find(s1, pos)) != std::string::npos)
-		{
-			line.erase(pos, s1_len);
-			line.insert(pos, s2);
-			pos += s2_len;
-		}
+		replaced_content += replaceAll(current_line, s1, s2);
+		replaced_content += "\n";
 	}
 
 	std::ofstream	outfile(filename + ".replace");
@@ -43,13 +55,17 @@ static int	process(std::string filename, std::string s1, std::string s2)
 		std::cerr << "Could not open output file.\n";
 		return (EXIT_FAILURE);
 	}
-	outfile << line;
+	outfile << replaced_content;
 	outfile.close();
 	infile.close();
 
 	return (EXIT_SUCCESS);
 }
 
+
+/*In the cases where: the file is empty, s1 and/or s2 are empty, s1 is not
+inside the file, I decided the program should not do anything and just
+return EXIT_SUCCESS since there is nothing to replace.*/
 int	main(int argc, char *argv[])
 {
 	std::string	filename;
@@ -67,10 +83,7 @@ int	main(int argc, char *argv[])
 	s1 = argv[2];
 	s2 = argv[3];
 	if (s1.empty() || s2.empty())
-	{
-		std::cerr << "Error: s1 and/or s2 cannot be empty." << std::endl;
-		return (EXIT_FAILURE);
-	}
+		return (EXIT_SUCCESS);
 
 	if (process(filename, s1, s2) == EXIT_FAILURE)
 		return (EXIT_FAILURE);
